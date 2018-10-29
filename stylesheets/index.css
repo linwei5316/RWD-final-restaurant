@@ -1,0 +1,714 @@
+@charset "UTF-8";
+.cancel, .enter, [class$='btn'], nav a:not(.current), footer .logo i {
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.cancel:hover, .enter:hover, :hover[class$='btn'], nav a:hover:not(.current), footer .logo i:hover {
+  opacity: 0.7;
+}
+
+.cancel:active, .enter:active, :active[class$='btn'], nav a:active:not(.current), footer .logo i:active {
+  opacity: 1;
+}
+
+* {
+  font-family: '微軟正黑體';
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+p {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 49px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  margin: 0;
+  background: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+form h6, form span, form label {
+  font-size: 14px;
+}
+
+.mt-6 {
+  margin-top: 6px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.cancel, .enter {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 6px 20px;
+  color: #FFF;
+  border: none;
+}
+
+.cancel {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.enter {
+  background-color: #F56C23;
+}
+
+input {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 5px 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input:not([type='radio']) {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+input:focus {
+  outline: 0;
+}
+
+input:not([type='button']):not([type='submit']):not([type='checkbox']):not([type='radio']) {
+  width: 100%;
+}
+
+input:not([type='button']):not([type='submit']):not([type='checkbox']):not([type='radio']):focus {
+  border: 1px solid #F56C23;
+}
+
+nav {
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  z-index: 99;
+}
+
+nav .menu-btn {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+nav .menu-btn > div {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 1px;
+  position: relative;
+}
+
+nav .menu-btn > div::before, nav .menu-btn > div::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 1px;
+  position: absolute;
+  left: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+nav .menu-btn > div::before {
+  top: -11px;
+}
+
+nav .menu-btn > div::after {
+  bottom: -11px;
+}
+
+nav .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 30px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+nav h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+nav a {
+  padding: 5px 15px;
+  color: #FFF;
+}
+
+nav a.current {
+  color: #F56C23;
+  cursor: default;
+}
+
+header {
+  color: #FFF;
+  width: 100%;
+  height: 420px;
+  background-image: url("https://hexschool.github.io/Rwd_sketch_export/assets/header_desktop.png");
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header h2 {
+  display: inline-block;
+}
+
+header .info {
+  padding: 20px 30px;
+  background-color: rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.main-content {
+  background-color: #F6F4F3;
+  color: #3D1101;
+}
+
+.main-content > div:not(.chef) {
+  padding: 50px 42px;
+}
+
+footer {
+  color: #3D1101;
+  padding: 50px 42px;
+  background: #EFE9E7 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer > div:not(:last-child) {
+  margin-right: 20px;
+}
+
+footer .about {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+footer .contact {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+footer .contact li {
+  font-weight: 300;
+  margin-bottom: 2px;
+}
+
+footer .logo {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  text-align: right;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+footer .logo h2 {
+  font-size: 49px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+footer .logo i {
+  padding: 5px;
+}
+
+footer .logo .google {
+  color: #DB4437;
+}
+
+footer .logo .twitter {
+  color: #41ABE1;
+}
+
+footer .logo .facebook {
+  color: #3A5795;
+}
+
+@media (max-width: 414px) {
+  input {
+    font-size: 17px;
+  }
+  [type="email"], [type="text"], [type="phone"], [type="password"], [type="number"], [type="tel"] {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+  [type="submit"], [type="button"] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  nav .container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.5s;
+    transition: height 0.5s;
+  }
+  nav ul a {
+    display: block;
+    padding: 12px 20px;
+  }
+  nav ul li:not(:last-child) a {
+    border-bottom: 1px solid #fff;
+  }
+  nav .menu-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  nav.menu-open ul {
+    height: 140px;
+  }
+  nav.menu-open .menu-btn > div {
+    background-color: transparent;
+  }
+  nav.menu-open .menu-btn > div::before, nav.menu-open .menu-btn > div::after {
+    top: 0;
+    left: 50%;
+    width: 110%;
+  }
+  nav.menu-open .menu-btn > div::before {
+    -webkit-transform: translateX(-50%) rotate(225deg);
+            transform: translateX(-50%) rotate(225deg);
+  }
+  nav.menu-open .menu-btn > div::after {
+    -webkit-transform: translateX(-50%) rotate(-225deg);
+            transform: translateX(-50%) rotate(-225deg);
+  }
+  header {
+    background-image: url("https://hexschool.github.io/Rwd_sketch_export/assets/header_mobile.png");
+  }
+  header h2 {
+    display: block;
+  }
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer > div:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+  footer .logo {
+    text-align: center;
+  }
+}
+
+@media (max-width: 320px) {
+  footer h1 {
+    font-size: 40px;
+  }
+}
+
+.feature {
+  background-color: #EFE9E7;
+  text-align: center;
+}
+
+.feature h4 {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.feature h4::before, .feature h4::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 1px;
+  background: #3D1101;
+}
+
+.feature h4:before {
+  -webkit-transform: translate(-190%, -50%);
+          transform: translate(-190%, -50%);
+}
+
+.feature h4:after {
+  -webkit-transform: translate(90%, -50%);
+          transform: translate(90%, -50%);
+}
+
+.feature ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.feature ul li {
+  padding: 0 30px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.feature img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  background: #000;
+  margin-bottom: 20px;
+}
+
+.chef {
+  color: #fff;
+  background: #3D1101;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 42px;
+}
+
+.chef .img {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  height: 470px;
+  background-image: url("https://hexschool.github.io/Rwd_sketch_export/assets/main_chef_brown.png");
+  background-position: center;
+  background-size: cover;
+  margin-right: 25px;
+}
+
+.chef .info {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+
+.chef .info h4 {
+  margin-bottom: 5px;
+}
+
+.chef .info p {
+  margin: 0;
+}
+
+.comment {
+  background-color: #EFE9E7;
+}
+
+.comment h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.comment ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.comment li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-top: 20px;
+  padding-left: 80px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.comment li:last-child {
+  margin: 0;
+}
+
+.comment img {
+  width: 67px;
+  height: 67px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.comment .job {
+  text-align: right;
+  font-weight: 300;
+}
+
+.comment .job::before {
+  content: '--';
+}
+
+.reserve h3 {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.reserve .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.reserve .map {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 20px;
+  background-image: url("https://hexschool.github.io/Rwd_sketch_export/assets/Map@2x.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.reserve form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.reserve form [type="radio"][value="true"] {
+  margin-right: 35px;
+}
+
+.reserve form .btn-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.reserve form .enter {
+  margin-left: 11px;
+}
+
+@media (max-width: 768px) {
+  .feature h4::before, .feature h4::after {
+    content: none;
+  }
+  .feature ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .feature ul li {
+    margin-bottom: 20px;
+  }
+  .chef {
+    padding: 0 20px;
+  }
+  .comment ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .comment ul li {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 414px) {
+  .chef {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+  }
+  .chef .img {
+    margin-right: 0;
+    -webkit-filter: grayscale(40%);
+            filter: grayscale(40%);
+    height: 500px;
+  }
+  .chef .info {
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 40px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: 0 0 15px #000;
+  }
+  .reserve .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .reserve .wrapper .map {
+    height: 300px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .reserve .btn-list {
+    margin-top: 15px;
+  }
+  .reserve .btn-list input {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,235 @@
+@import '_all.sass'
+  
+#order
+  display: flex
+  justify-content: center
+  align-items: stretch
+  .order-menu
+    flex: 220px
+    flex-grow: 0
+    margin-right: 20px
+    li
+      @extend %btn
+      padding: 5px 10px
+      border-bottom: 1px solid $colorBrownDark
+      &::after
+        content: attr(data-amount)
+      &.active
+        background-color: $colorBrownDark
+        color: $colorWhite
+  .order-content
+    flex: 1
+    .header
+      display: flex
+      margin-bottom: 25px
+    .filter
+      display: flex
+      justify-content: flex-start
+      align-items: stretch
+      box-sizing: border-box
+      height: 32px
+      border: 2px solid $colorBrownDark
+      flex: 2
+      input
+        border: none
+        background: transparent
+        flex: 80px
+        flex-shrink: 0
+    .search-btn
+      +size(36px,100%)
+      display: flex
+      justify-content: center
+      align-items: center
+      background: $colorBrownDark
+      color: $colorWhite
+    .pay-cart
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      flex: 1
+    .pay-btn
+      padding: 5px 10px
+      // margin-right: 15px
+      // border-right: 1px solid $colorBrownDark
+    .divide
+      +size(2px,20px)
+      background-color: $colorBrownDark
+      margin: 0 15px
+      
+    .cart-btn
+      position: relative
+      font-size: 22px
+      +flexCenter
+      padding: 5px
+    .cart-amount
+      position: absolute
+      top: -7px
+      right: -4px
+      color: #fff
+      background: $colorOrange
+      +size(16px)
+      padding: 2px
+      +flexCenter
+      border-radius: 50%
+      font-size: 12px
+    //購物清單容器
+    ul
+      display: flex
+      justify-content: flex-start
+      flex-wrap: wrap
+      
+
+      
+//訂單清單樣式
+.order-content
+  li
+    box-shadow: 0 0 10px rgba(black,0.2)
+    background: $colorBrownNormal
+    flex: calc(100% / 3 - 20px)
+    flex-grow: 0
+    flex-shrink: 1
+    min-width: 188px
+    margin: 10px
+    .top
+      position: relative
+      +size(100%,120px)
+    .love-btn
+      @extend %btn
+      position: absolute
+      left: 13px
+      top: 18px
+      z-index: 15
+      +size(12px)
+      border: 2px solid $colorWhite
+      border-top: none
+      border-right: none
+      position: relative
+      transform: rotate(-45deg)
+      transition: opacity 0.3s
+      &::before,&::after
+        content: ''
+        position: absolute
+      &::before
+        width: 100%
+        height: 50%
+        border: 2px solid $colorWhite
+        border-bottom: none
+        bottom: 100%
+        left: -2px
+        border-radius: 20px 20px 0 0
+      &::after
+        width: 50%
+        height: 100%
+        border: 2px solid $colorWhite
+        border-left: none
+        bottom: -2px
+        left: 100%
+        border-radius: 0 20px 20px 0
+      &.love
+        background-color: $colorWhite
+        &::before,&::after
+          background-color: $colorWhite
+    .img
+      position: absolute
+      left: 0
+      top: 0
+      +size(100%)
+      background-image: url('https://hexschool.github.io/Rwd_sketch_export/assets/product_1.png')
+      background-size: cover
+      background-position: center
+    //熱銷美食緞帶
+    .hot
+      +size(100px)
+      position: absolute
+      top: -5px
+      right: -6px
+      overflow: hidden
+      .ribbon
+        color: $colorWhite
+        background: $colorTiffanyGreen
+        width: 120%
+        padding: 5px 0
+        text-align: center
+        position: absolute
+        top: 14px
+        right: -29px
+        transform: rotate(45deg)
+        &::before,&::after
+          content: ''
+          position: absolute
+          top: 100%
+          border-top: 8px solid darken($colorTiffanyGreen,10)
+        &::before
+          left: 0
+          border-right: 8px solid transparent
+        &::after
+          right: 0
+          border-left: 8px solid transparent
+    .bottom
+      padding: 10px
+      padding-top: 20px
+      text-align: center
+    .name
+      margin-bottom: 2px
+    .name-english
+      font-size: 12px
+      margin-bottom: 10px
+    hr
+      width: 60%
+      margin-bottom: 20px
+    .price
+      font-weight: 500
+      font-style: italic
+      &::before
+        content: '$'
+        font-weight: 300
+        font-style: initial
+    .add-cart-btn
+      color: $colorOrange
+      padding: 3px
+      border: 2px solid $colorOrange
+      border-radius: 3px
+
+@media(max-width: 768px)
+  //order pad斷點再排成 menu 2*2 header 一排 下面清單
+  #order
+    flex-direction: column
+    .order-menu
+      flex: 1
+      margin-right: 0
+      margin-bottom: 20px
+      h4
+        text-align: center
+      ul
+        display: flex
+        flex-wrap: wrap
+        li
+          width: 50%
+          padding: 10px 0
+          text-align: center
+          box-shadow: 0 0 2px $colorBrownDark
+          border-bottom: none
+          margin-bottom: 2px  
+    .order-content
+      .filter
+        height: 40px
+
+@media(max-width: 414px)
+  #order
+    .order-menu
+      margin-bottom: 20px
+      ul
+        li
+          width: 100%
+    .order-content
+      li
+        flex: 100%
+        margin: 0
+        margin-bottom: 30px
+      .top
+        width: calc(100vw - 84px)
+        height: 140px
+    .header
+      flex-direction: column
+      .filter
+        margin-bottom: 20px

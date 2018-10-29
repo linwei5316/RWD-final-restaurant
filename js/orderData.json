@@ -1,0 +1,53 @@
+[
+	{
+		"type": "hambuger",
+		"love": false,
+		"hot": true,
+		"name": "經典漢堡套餐",
+		"nameEng": "Classic Hamburger Package",
+		"price": 290,
+		"imgUrl": "https://hexschool.github.io/Rwd_sketch_export/assets/product_1.png"
+	},
+	{
+		"type": "hambuger",
+		"love": false,
+		"name": "豪華漢堡套餐",
+		"nameEng": "luxurious Hamburger Package",
+		"price": 450,
+		"imgUrl": "https://2rt9loawzcmbvlze40mhj9n0-wpengine.netdna-ssl.com/wp-content/uploads/2015/04/hero-sensations-compliments-deluxe-hot-dog-hambuger-buns-760x428.jpg"
+	},
+	{
+		"type": "hambuger",
+		"love": false,
+		"name": "巨無霸漢堡套餐",
+		"nameEng": "Large Hamburger Package",
+		"price": 777,
+		"imgUrl": "https://1001concepten.conflate-content.nl/images/vermeldingen/vrijgezelman/6248/hamburger_workshop.jpg"
+	},
+	{
+		"type": "hambuger",
+		"love": false,
+		"name": "漢堡兄弟",
+		"nameEng": "Hamburg Brothers",
+		"price": 339,
+		"imgUrl": "https://hexschool.github.io/Rwd_sketch_export/assets/product_3.png"
+	},
+	{
+		"type": "fried",
+		"love": false,
+		"hot": false,
+		"name": "炸物拼盤",
+		"nameEng": "Fried Package",
+		"price": 190,
+		"imgUrl": "https://hexschool.github.io/Rwd_sketch_export/assets/product_4.png"
+	},
+	{
+		"type": "brunch",
+		"love": false,
+		"hot": true,
+		"name": "英俊香腸",
+		"nameEng": "Handsome Sausage",
+		"price": 279,
+		"imgUrl": "https://hexschool.github.io/Rwd_sketch_export/assets/product_2.png"
+	}
+]

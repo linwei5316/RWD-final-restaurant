@@ -1,0 +1,299 @@
+$colorBrownLight: #F6F4F3
+$colorBrownNormal: #EFE9E7
+$colorBrownDark: #3D1101
+$colorOrange: #F56C23
+$colorTiffanyGreen: #00CC99
+$colorWhite: #FFF
+
+$fontBaseSize: 10px
+  
+=size($w,$h:$w)
+  width: $w
+  height: $h
+  
+=translucentBlackBg($translucent)
+  background-color: rgba(black,$translucent)
+  
+=flexCenter
+  display: flex
+  justify-content: center
+  align-items: center
+%btn
+  cursor: pointer
+  transition: 0.3s
+  user-select: none
+  &:hover
+    opacity: 0.7
+  &:active
+    opacity: 1
+  
+*
+  font-family: '微軟正黑體'
+  // outline: 1px solid red
+
+  
+h1,h2,h3,h4,h5,h6,p
+  margin: 0
+  margin-bottom: 16px
+  
+h2,h3,h4,h5,h6
+  font-weight: 400
+p
+  font-weight: 300 
+
+a
+  text-decoration: none
+
+h1
+  font-size: $fontBaseSize*4.9
+h2
+  font-size: $fontBaseSize*3.6
+h3
+  font-size: $fontBaseSize*2.4
+h4
+  font-size: $fontBaseSize*2
+h5
+  font-size: $fontBaseSize*1.8
+h6
+  font-size: $fontBaseSize*1.6
+p
+  font-size: $fontBaseSize*1.6
+  
+ul
+  list-style: none
+  padding: 0
+  margin: 0
+
+html,body
+  margin: 0
+  background: #333
+  overflow-x: hidden
+  
+.container
+  position: relative
+  max-width: 1024px
+  margin: 0 auto
+  box-shadow: 0 0 30px rgba(black,0.5)
+  
+form
+  h6,span,label
+    font-size: 14px
+
+.mt-6
+  margin-top: 6px
+.mb-5
+  margin-bottom: 5px
+.mb-15
+  margin-bottom: 15px
+  
+//按鈕
+.cancel,.enter
+  @extend %btn
+  appearance: none
+  padding: 6px 20px
+  color: $colorWhite
+  border: none
+  
+[class$='btn']
+  @extend %btn
+  
+.cancel
+  +translucentBlackBg(0.35)
+.enter
+  background-color: $colorOrange
+
+input
+  border-radius: 3px
+  border: 1px solid #ccc
+  padding: 5px 12px
+  box-sizing: border-box
+  &:not([type='radio'])
+    appearance: none  
+  &:focus
+    outline: 0
+  &:not([type='button']):not([type='submit']):not([type='checkbox']):not([type='radio'])
+    width: 100%
+    &:focus
+      border: 1px solid $colorOrange
+//-----------------  
+nav
+  color: $colorWhite
+  +translucentBlackBg(0.75)
+  position: fixed
+  top: 0
+  left: 0
+  +size(100%,56px)
+  z-index: 99
+  .menu-btn
+    +size(32px)
+    position: absolute
+    top: 50%
+    left: 15px
+    transform: translateY(-50%)
+    display: none
+    justify-content: center
+    align-items: stretch
+    flex-direction: column
+    &>div
+      +size(100%,3px)
+      background-color: #fff
+      border-radius: 1px
+      position: relative
+      &::before,&::after
+        content: ''
+        display: block
+        +size(100%,3px)
+        background-color: #fff
+        border-radius: 1px
+        position: absolute
+        left: 0
+        transition: 0.4s
+      &::before
+        top: -11px
+      &::after
+        bottom: -11px
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    box-sizing: border-box
+    padding: 0 30px
+    box-shadow: 0 0 10px rgba(black,0.6)
+  h1
+    font-size: 24px
+    margin: 0
+  ul
+    display: flex
+    justify-content: center
+    align-items: stretch
+  a
+    padding: 5px 15px
+    color: $colorWhite
+    &.current
+      color: $colorOrange
+      cursor: default
+    &:not(.current)
+      @extend %btn
+header
+  color: $colorWhite
+  +size(100%,420px)
+  background-image: url('https://hexschool.github.io/Rwd_sketch_export/assets/header_desktop.png')
+  background-size: cover
+  background-position: center
+  +flexCenter
+  h2
+    display: inline-block
+  .info
+    padding: 20px 30px
+    +translucentBlackBg(0.35)
+    text-align: center
+    
+.main-content
+  background-color: $colorBrownLight
+  color: $colorBrownDark
+  &>div:not(.chef)
+    padding: 50px 42px
+
+footer
+  color: $colorBrownDark
+  padding: 50px 42px
+  background: $colorBrownNormal !important
+  display: flex
+  &>div:not(:last-child)
+    margin-right: 20px
+  .about
+    flex: 2
+  .contact
+    flex: 2
+    li
+      font-weight: 300
+      margin-bottom: 2px
+  .logo
+    flex: 3
+    text-align: right
+    user-select: none
+    h2
+      font-size: 49px
+      font-weight: bolder
+      margin-bottom: 10px
+    i
+      @extend %btn
+      padding: 5px
+    .google
+      color: #DB4437
+    .twitter
+      color: #41ABE1
+    .facebook
+      color: #3A5795
+  
+@media(max-width: 414px)
+  input
+    font-size: 17px
+  
+  [type="email"],[type="text"],[type="phone"],[type="password"],[type="number"],[type="tel"]
+    padding-top: 9px
+    padding-bottom: 9px
+  [type="submit"],[type="button"]
+    padding-top: 10px
+    padding-bottom: 10px
+  
+  nav
+    .container
+      justify-content: center
+    ul
+      position: absolute
+      top: 100%
+      left: 0
+      flex-direction: column
+      width: 100%
+      +translucentBlackBg(0.75)
+      box-shadow: 0 0 5px rgba(black,0.4)
+      height: 0
+      overflow: hidden
+      transition: height 0.5s
+      a
+        display: block
+        padding: 12px 20px
+      li:not(:last-child) a
+        border-bottom: 1px solid #fff
+    .menu-btn
+      display: flex
+    &.menu-open
+      ul
+        height: 140px
+      .menu-btn
+        &>div
+          background-color: transparent
+          &::before,&::after
+            top: 0
+            left: 50%
+            width: 110%
+          &::before
+            transform: translateX(-50%) rotate(225deg)
+          &::after
+            transform: translateX(-50%) rotate(-225deg)
+          
+  header
+    background-image: url('https://hexschool.github.io/Rwd_sketch_export/assets/header_mobile.png')
+    h2
+      display: block
+      
+  footer
+    flex-direction: column
+    &>div:not(:last-child)
+      margin-right: 0
+      margin-bottom: 25px
+    .logo
+      text-align: center
+      
+@media(max-width: 320px)
+  footer
+    h1
+      font-size: $fontBaseSize*4
+  
+  
+      
+  
+  
+  

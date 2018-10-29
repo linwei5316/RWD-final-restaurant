@@ -1,0 +1,156 @@
+@import '_all.sass'
+  
+.feature
+  background-color: $colorBrownNormal
+  text-align: center
+  h4
+    margin-bottom: 30px
+    position: relative
+    &::before,&::after
+      content: ''
+      display: block
+      position: absolute
+      top: 50%
+      left: 50%
+      +size(120px,1px)
+      background: $colorBrownDark
+    &:before
+      transform: translate(-190%,-50%)
+    &:after
+      transform: translate(90%,-50%)
+    
+  ul
+    display: flex
+    justify-content: flex-start
+    align-items: stretch
+    li
+      padding: 0 30px
+      flex: 1
+  img
+    max-width: 100%
+    height: auto
+    border-radius: 50%
+    background: #000
+    margin-bottom: 20px
+    
+    
+.chef
+  color: #fff
+  background: $colorBrownDark
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 0 42px
+  .img
+    flex: 5
+    height: 470px
+    background-image: url('https://hexschool.github.io/Rwd_sketch_export/assets/main_chef_brown.png')
+    background-position: center
+    background-size: cover
+    margin-right: 25px
+  .info
+    flex: 4
+    h4
+      margin-bottom: 5px
+    p
+      margin: 0
+      
+      
+.comment
+  background-color: $colorBrownNormal
+  h3
+    text-align: center
+    margin-bottom: 30px
+  ul
+    display: flex
+  li
+    flex: 1
+    padding-top: 20px
+    padding-left: 80px
+    margin-right: 20px
+    position: relative
+    &:last-child
+      margin: 0
+  img
+    +size(67px)
+    border-radius: 50%
+    position: absolute
+    left: 0
+    top: 0
+  .job
+    text-align: right
+    font-weight: 300
+    &::before
+      content: '--'
+    
+.reserve
+  h3
+    text-align: center
+    margin-bottom: 38px
+  .wrapper
+    display: flex
+    justify-content: center
+    align-items: stretch
+  .map
+    flex: 1
+    margin-right: 20px
+    background-image: url('https://hexschool.github.io/Rwd_sketch_export/assets/Map@2x.png')
+    background-size: cover
+    background-position: center
+  form
+    flex: 1
+    [type="radio"][value="true"]
+      margin-right: 35px
+    .btn-list
+      display: flex
+      justify-content: flex-end
+      align-items: stretch
+    .enter
+      margin-left: 11px
+      
+@media(max-width: 768px)
+  .feature
+    h4
+      &::before,&::after
+        content: none
+    ul
+      flex-direction: column
+      li
+        margin-bottom: 20px
+  .chef
+    padding: 0 20px
+  .comment
+    ul
+      flex-direction: column
+      li
+        margin-bottom: 20px
+
+
+@media(max-width: 414px)
+  .chef
+    position: relative
+    padding: 0
+    overflow: hidden
+    .img
+      margin-right: 0
+      filter: grayscale(40%)
+      height: 500px
+    .info
+      +size(100%)
+      box-sizing: border-box
+      padding: 40px 20px
+      position: absolute
+      top: 0
+      left: 0
+      text-shadow: 0 0 15px #000
+  .reserve
+    .wrapper
+      flex-direction: column
+      .map
+        height: 300px
+        margin-right: 0
+        margin-bottom: 20px
+    .btn-list
+      margin-top: 15px
+      input
+        flex: 1
